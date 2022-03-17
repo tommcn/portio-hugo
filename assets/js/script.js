@@ -53,17 +53,22 @@ function PageLoad() {
     });
   }, time);
 }
+
+function updateNav() {
+  if ($(document).scrollTop() > 25) {
+    $(".navbar").addClass("nav__color__change");
+  } else {
+    $(".navbar").removeClass("nav__color__change");
+  }
+}
+
 $(document).ready(function () {
   // preloder
   PageLoad();
-
+  updateNav()
   // change-navigation-color
   $(window).scroll(function () {
-    if ($(document).scrollTop() > 200) {
-      $(".navbar").addClass("nav__color__change");
-    } else {
-      $(".navbar").removeClass("nav__color__change");
-    }
+    updateNav();
   });
 
   // Smooth scrolling
