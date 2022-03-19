@@ -1,0 +1,101 @@
+/* Theming attempts */
+
+$primary: #5d78ff;
+$secondary: #282f49;
+// Text
+$headings-color: #282f49;
+$body-color: #7e7e8a;
+
+$themes: (
+  light: (
+    "primary": $primary,
+    "navbar-bg": white,
+    "blob-color": #f1f6f9,
+    "body-bg": white,
+    "heading-color": #282f49,
+    "body-color": #7e7e8a,
+    "top-line-color": $gray-800,
+  ),
+  dark: (
+    "primary": $primary,
+    "navbar-bg": black,
+    "blob-color": #282f49,
+    "body-bg": black,
+    "heading-color": #b6c4d7,
+    "body-color": #9f9fad,
+    "top-line-color": $gray-500,
+  ),
+);
+
+$theme-map: null;
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
+
+.content {
+  @include theme() {
+    color: theme-get("primary");
+  }
+}
+
+/* Overrides */
+body {
+  @include theme() {
+    background-color: theme-get("body-bg");
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include theme() {
+      color: theme-get("heading-color");
+    }
+  }
+  p {
+    @include theme() {
+      color: theme-get("body-color");
+    }
+  }
+  .top-title,
+  span {
+    @include theme() {
+      color: theme-get("top-line-color");
+    }
+  }
+  .resume__education h4 {
+    color: $secondary;
+  }
+  .about_content h3 {
+    color: #f8f9fa;
+  }
+  .resume__heading {
+    h2,
+    p,
+    .top-title {
+      color: #f8f9fa;
+    }
+  }
+  .footer__cta {
+    h2,
+    span {
+      color: #f8f9fa;
+    }
+  }
+  .footer__widget {
+    h4 {
+      color: #f8f9fa;
+    }
+  }
+}

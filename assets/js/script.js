@@ -65,7 +65,24 @@ function updateNav() {
 $(document).ready(function () {
   // preloder
   PageLoad();
-  updateNav()
+  updateNav();
+
+  $('.toggle-mode').click(function () {
+    // Global
+    $('html').toggleClass('dark').toggleClass('light');
+    // Nav bar
+    $('.toggle-mode i').toggleClass(['fa-moon-o', 'fa-sun-o']);
+    $('.nav-item .nav-link').toggleClass(["text-dark", "text-light"]);
+    if ($('.nav-item .toggle-mode').css('color') == 'rgb(255, 255, 255)') {
+      $('.nav-item .toggle-mode').css("color", "black");
+      // $('a .text-dark').toggleClass("text-dark").toggleClass('text-light');
+    } else {
+      $('.nav-item .toggle-mode').css("color", "white");
+    }
+    // Body
+    $('.portfolio-item a.text-dark, .portfolio-item a.text-light').toggleClass(["text-dark", "text-light"]);
+  });
+
   // change-navigation-color
   $(window).scroll(function () {
     updateNav();

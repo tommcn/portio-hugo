@@ -18,6 +18,10 @@
             class="nav-link text-dark text-sm-center p-2 {{ if $.IsHome }}scroll{{ end }}">{{ .Name }}</a>
         </li>
         {{ end }}
+        <li class="nav-item">
+          <button class="toggle-mode"><i class="fa fa-moon-o"></i></button>
+        </li>
+
       </ul>
       <!-- <div class="navbar-nav">
         <a href="{{ "contact" | absURL }}" class="btn btn-primary btn-zoom hire_button">Contact Me</a>
