@@ -9,6 +9,7 @@ $body-color: #7e7e8a;
 $themes: (
   light: (
     "primary": $primary,
+    "secondary": #282f49,
     "navbar-bg": white,
     "blob-color": #f1f6f9,
     "body-bg": white,
@@ -18,6 +19,7 @@ $themes: (
   ),
   dark: (
     "primary": $primary,
+    "secondary": #8ea5f7,
     "navbar-bg": black,
     "blob-color": #282f49,
     "body-bg": black,

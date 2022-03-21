@@ -73,14 +73,19 @@ $(document).ready(function () {
     // Nav bar
     $('.toggle-mode i').toggleClass(['fa-moon-o', 'fa-sun-o']);
     $('.nav-item .nav-link').toggleClass(["text-dark", "text-light"]);
+
     if ($('.nav-item .toggle-mode').css('color') == 'rgb(255, 255, 255)') {
+      // When dark mode is off
       $('.nav-item .toggle-mode').css("color", "black");
-      // $('a .text-dark').toggleClass("text-dark").toggleClass('text-light');
+      $('.btn-outline-light').toggleClass(["btn-outline-secondary", "btn-outline-light"]);
     } else {
+      // When dark mode is on
       $('.nav-item .toggle-mode').css("color", "white");
+      $('.btn-outline-secondary').toggleClass(["btn-outline-secondary", "btn-outline-light"]);
     }
     // Body
     $('.portfolio-item a.text-dark, .portfolio-item a.text-light').toggleClass(["text-dark", "text-light"]);
+    $('.case-details-nav a.text-dark, .case-details-nav a.text-light').toggleClass(["text-dark", "text-light"]);
   });
 
   // change-navigation-color
