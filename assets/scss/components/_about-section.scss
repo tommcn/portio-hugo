@@ -1,5 +1,8 @@
 .about {
   overflow: hidden;
+  .btn {
+    margin-bottom: 12px;
+  }
   &_content {
     display: flex;
     align-items: center;

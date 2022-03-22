@@ -5,7 +5,10 @@
   background: transparent;
   transition: all 0.3s ease;
   @include desktop {
-    background: $white;
+    @include theme() {
+      background: theme-get("navbar-bg");
+      //   background: $white;
+    }
   }
   @include desktop {
     padding: 15px 20px;
