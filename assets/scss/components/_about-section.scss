@@ -3,6 +3,11 @@
   .btn {
     margin-bottom: 12px;
   }
+  p {
+    @include theme() {
+      color: $gray-500;
+    }
+  }
   &_content {
     display: flex;
     align-items: center;
