@@ -1,8 +1,12 @@
 // Preloader
-
 function PageLoad() {
+  gsap.config({
+    nullTargetWarn: false,
+  });
+
   $("body").removeClass("hidden");
-  TweenMax.to($(".preloader-text"), 1, {
+  gsap.to($(".preloader-text"), {
+    duration: 1,
     force3D: true,
     opacity: 1,
     y: 0,
@@ -39,13 +43,15 @@ function PageLoad() {
   }
   // Fading Out Loadbar on Finised
   setTimeout(function () {
-    TweenMax.to($(".percentage, .inner"), 0.7, {
+    gsap.to($(".percentage, .inner"), {
+      duration: 0.7,
       force3D: true,
       opacity: 0,
       yPercent: -101,
       ease: Power3.easeInOut,
     });
-    TweenMax.to($(".preloader-wrap"), 0.7, {
+    gsap.to($(".preloader-wrap"), {
+      duration: 0.7,
       force3D: true,
       yPercent: -150,
       delay: 0.2,
