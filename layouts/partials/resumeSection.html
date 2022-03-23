@@ -11,6 +11,11 @@
                         {{ .title | markdownify }}
                     </div>
 
+                    <a class="btn btn-outline-primary btn-zoom" href="{{ .resumeTarget | absURL }}" target="_blank"
+                        rel="noopener noreferrer">
+                        {{ .resumeButtonName }} </a>
+
+
                     <div class="btn-group nav mt-5">
                         <a href="#{{.tab1Target}}" class="btn btn-primary active" data-toggle="tab">{{ .tab1Name }}</a>
                         <a href="#{{.tab2Target}}" class="btn btn-primary" data-toggle="tab">{{ .tab2Name }}</a>
