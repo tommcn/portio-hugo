@@ -28,7 +28,7 @@
           <h1>{{ .Title }}</h1>
         </div>
         <p>
-          {{ .Params.shortDescription }}
+          {{ .Params.shortDescription | markdownify }}
         </p>
         <div class="case-details-info">
           <div class="case-details-info-item">
