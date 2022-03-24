@@ -57,6 +57,12 @@
       @include desktop {
         margin: 0;
       }
+      code {
+        @include theme() {
+          color: theme-get("body-color");
+        }
+      }
+
       img {
         width: 100%;
         height: auto;
