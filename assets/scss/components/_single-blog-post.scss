@@ -57,10 +57,8 @@
       @include desktop {
         margin: 0;
       }
-      code {
-        @include theme() {
-          color: theme-get("body-color");
-        }
+      code span {
+        color: $gray-500;
       }
 
       img {
