@@ -32,11 +32,11 @@
         </p>
         <div class="case-details-info">
           <div class="case-details-info-item">
-            <h5 class="text-light">Client</h5>
+            <h5 class="text-light">Team</h5>
             <p>{{ .Params.client }}</p>
           </div>
           <div class="case-details-info-item">
-            <h5 class="text-light">Service</h5>
+            <h5 class="text-light">Skill</h5>
             <p>{{ .Params.service }}</p>
           </div>
           <div class="case-details-info-item">
@@ -44,6 +44,7 @@
             <p>{{ .PublishDate.Format "January 2, 2006" }}</p>
           </div>
         </div>
+        {{ if isset .Params "challenge" }}
         <div class="row mb-5">
           <div class="col-lg-6">
             <div class="case-details-service">
@@ -62,6 +63,7 @@
             </div>
           </div>
         </div>
+        {{ end }}
         <div class="case-details-thumb mb-5">
           <img src="{{ .Params.thumbnail | absURL }}" alt="case-details" />
         </div>
