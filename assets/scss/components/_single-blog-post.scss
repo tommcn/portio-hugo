@@ -42,7 +42,7 @@
   }
   .singleBlog {
     &__feature {
-      margin: 0 100px;
+      margin: 0 200px 0 200px;
       @include desktop {
         margin: 0;
       }
@@ -56,6 +56,18 @@
       margin: 0 200px 0 200px;
       @include desktop {
         margin: 0;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        @include desktop {
+          width: 100%;
+          height: auto;
+        }
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .blog-section {
         margin-bottom: 60px;
