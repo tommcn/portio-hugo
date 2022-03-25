@@ -7,22 +7,22 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> -->
 
   {{ "<!-- Slick Carousel -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "plugins/slick/slick.css" | absURL }}" as="style" as="style"
+  <link rel="stylesheet" href="{{ "plugins/slick/slick.css" | absURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'" rel="preload" />
-  <link rel="stylesheet" href="{{ "plugins/slick/slick-theme.css" | absURL }}" as="style" as="style"
+  <link rel="stylesheet" href="{{ "plugins/slick/slick-theme.css" | absURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'" rel="preload" />
   {{ "<!-- Font Awesome -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "plugins/font-awesome/css/font-awesome.min.css" | absURL }}" as="style" as="style"
+  <link rel="stylesheet" href="{{ "plugins/font-awesome/css/font-awesome.min.css" | absURL }}" as="font"
     onload="this.onload=null;this.rel='stylesheet'" rel="preload" />
 
   {{ "<!-- Magnific Popup -->" | safeHTML }}
-  <link rel="stylesheet" href="{{"plugins/magnafic-popup/magnific-popup.css" | absURL }}" as="style" as="style"
+  <link rel="stylesheet" href="{{"plugins/magnafic-popup/magnific-popup.css" | absURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'" rel="preload" />
 
   {{ "<!-- Stylesheets -->" | safeHTML }}
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
-  <link href="{{ $style.Permalink }}" rel="stylesheet" as="style" as="style"
-    onload="this.onload=null;this.rel='stylesheet'" rel="preload" />
+  <link href="{{ $style.Permalink }}" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    rel="preload" />
 
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon" />
