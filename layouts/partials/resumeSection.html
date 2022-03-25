@@ -23,8 +23,8 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="tab-content ">
-                    <div class="resume__education tab-pane active" id="{{.tab1Target}}">
+                <div class="tab-content">
+                    <div class="resume__education tab-pane fade show active" id="{{.tab1Target}}">
                         {{ $Section := .education }}
                         {{ range $Section }}
                         <div class="resume__education_item">
@@ -35,7 +35,7 @@
 
                     </div>
 
-                    <div class="resume__education tab-pane" id="{{.tab2Target}}">
+                    <div class="resume__education tab-pane fade" id="{{.tab2Target}}">
                         {{ $Section := .experience }}
                         {{ range $Section }}
                         <div class="resume__education_item">
