@@ -68,31 +68,45 @@ function updateNav() {
   }
 }
 
+function toggle() {
+  $('html').toggleClass('dark').toggleClass('light');
+  // Nav bar
+  $('.toggle-mode i').toggleClass(['fa-moon-o', 'fa-sun-o']);
+  $('.nav-item .nav-link').toggleClass(["text-dark", "text-light"]);
+
+  if ($('.nav-item .toggle-mode').css('color') == 'rgb(255, 255, 255)') {
+    // When dark mode is off
+    $('.nav-item .toggle-mode').css("color", "black");
+    $('.btn-outline-light').toggleClass(["btn-outline-secondary", "btn-outline-light"]);
+  } else {
+    // When dark mode is on
+    $('.nav-item .toggle-mode').css("color", "white");
+    $('.btn-outline-secondary').toggleClass(["btn-outline-secondary", "btn-outline-light"]);
+  }
+  // Body
+  $('.portfolio-item a.text-dark, .portfolio-item a.text-light').toggleClass(["text-dark", "text-light"]);
+  $('.case-details-nav a.text-dark, .case-details-nav a.text-light').toggleClass(["text-dark", "text-light"]);
+}
+
 $(document).ready(function () {
   // preloder
   PageLoad();
   updateNav();
 
-  $('.toggle-mode').click(function () {
-    // Global
-    $('html').toggleClass('dark').toggleClass('light');
-    // Nav bar
-    $('.toggle-mode i').toggleClass(['fa-moon-o', 'fa-sun-o']);
-    $('.nav-item .nav-link').toggleClass(["text-dark", "text-light"]);
+  if (window.localStorage.getItem("mode") == "dark") {
+    toggle();
+  }
 
-    if ($('.nav-item .toggle-mode').css('color') == 'rgb(255, 255, 255)') {
-      // When dark mode is off
-      $('.nav-item .toggle-mode').css("color", "black");
-      $('.btn-outline-light').toggleClass(["btn-outline-secondary", "btn-outline-light"]);
+  $('.toggle-mode').click(function () {
+    if (window.localStorage.getItem("mode") === "dark") {
+      window.localStorage.setItem("mode", "light");
     } else {
-      // When dark mode is on
-      $('.nav-item .toggle-mode').css("color", "white");
-      $('.btn-outline-secondary').toggleClass(["btn-outline-secondary", "btn-outline-light"]);
+      window.localStorage.setItem("mode", "dark");
     }
-    // Body
-    $('.portfolio-item a.text-dark, .portfolio-item a.text-light').toggleClass(["text-dark", "text-light"]);
-    $('.case-details-nav a.text-dark, .case-details-nav a.text-light').toggleClass(["text-dark", "text-light"]);
+    toggle();
+    // Global
   });
+
 
   // change-navigation-color
   $(window).scroll(function () {
